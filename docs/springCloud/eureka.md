@@ -81,3 +81,11 @@ eureka:
 ## 自我保护
 ![自我保护](../static/jpg/eureka自我保护.png)
 >在一定时间内服务器没有收到心跳包 会开始保护机制90s内不会删除服务
+
+## 禁止自我保护
+```yml
+eureka.server.enable-self-preservation: false            # 关闭自我保护机制
+eureka.server.eviction-interval-timer-in-ms: 2000        # 2秒内无心跳自动剔除
+eureka.instacnce.lease-renewal-interval-in-seconds: 1    # 发送心跳间隔
+eureka.instacnce.lease-expiration-duration-in-seconds: 2 # 等待时间
+```
