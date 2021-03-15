@@ -53,7 +53,7 @@ eureka:
     instance-id: payment8001 # 实例名称
     prefer-ip-address: true # 显示ip地址
 ```
-![actuator](/static/jpg/actuator.png)
+![actuator](../static/jpg/actuator.png)
 >查看健康状态为/actuator/health
 
 ## Discovery
@@ -79,5 +79,5 @@ eureka:
     }
 ```
 ## 自我保护
-![自我保护](/static/jpg/eureka自我保护.png)
+![自我保护](../static/jpg/eureka自我保护.png)
 >在一定时间内服务器没有收到心跳包 会开始保护机制90s内不会删除服务
