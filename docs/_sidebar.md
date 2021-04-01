@@ -11,3 +11,4 @@
     * [版本选择](springCloud/版本选择.md)
     * [整体配置](springCloud/整体配置.md)
     * [eureka](springCloud/eureka.md)
+    * [zookeeper](springCloud/zookeeper.md)

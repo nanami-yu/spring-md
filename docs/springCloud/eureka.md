@@ -1,4 +1,10 @@
 ## 依赖
+>工程为
+* cloud-eureka-server7001
+* cloud-eureka-server7002
+* cloud-consumer-order80
+* cloud-provider-payment8001
+* cloud-provider-payment8002
 ```yml
         # 客户端依赖
         <dependency>
