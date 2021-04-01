@@ -10,5 +10,6 @@
 * [SpringCloud]()
     * [版本选择](springCloud/版本选择.md)
     * [整体配置](springCloud/整体配置.md)
-    * [eureka](springCloud/eureka.md)
-    * [zookeeper](springCloud/zookeeper.md)
+    * [注册中心(AP)eureka](springCloud/eureka.md)
+    * [注册中心(CP)zookeeper](springCloud/zookeeper.md)
+    * [注册中心(CP)consul](springCloud/consul.md)
