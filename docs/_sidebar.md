@@ -15,3 +15,4 @@
     * [注册中心(CP)consul](springCloud/consul.md)
     * [负载均衡Ribbon](springCloud/Ribbon.md)
     * [负载均衡OpenFeign](springCloud/OpenFeign.md)
+    * [断路器Hystrix](springCloud/Hystrix.md)
