@@ -23,9 +23,9 @@
             return new CommonResult<>(444,"操作失败");
         }
 ```
-* RoundRobinRule             轮训
+* RoundRobinRule             轮询
 * RandomRule                 随机
-* RetryRule                  先按照轮训 失败会重试
+* RetryRule                  先按照轮询 失败会重试
 * WeightedResponseTimeRule   轮巡扩展 响应速度越快 越容易被选中
 * BestAvailableRule          过滤到由于访问故障的服务，在可用的服务中选择并发最小的
 * AvailabilityFilteringRUle  在可用的服务中选择并发最小的
@@ -47,7 +47,7 @@ public class MySelfRule {
 ```
 
 ## 源码
-> 轮训依据主要是获取所有服务 根据请求次数 获取角标 
+> 轮询依据主要是获取所有服务 根据请求次数 获取角标
 > 原理 + JUC(CAS + 自旋锁)
 ```java
 package com.atguigu.springcloud.lb;

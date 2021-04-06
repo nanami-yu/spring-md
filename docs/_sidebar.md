@@ -13,4 +13,5 @@
     * [注册中心(AP)eureka](springCloud/eureka.md)
     * [注册中心(CP)zookeeper](springCloud/zookeeper.md)
     * [注册中心(CP)consul](springCloud/consul.md)
-    * [负载均衡(CP)consul](springCloud/Ribbon.md)
+    * [负载均衡Ribbon](springCloud/Ribbon.md)
+    * [负载均衡OpenFeign](springCloud/OpenFeign.md)
