@@ -105,3 +105,4 @@ public class PaymServiceImpl implements PaymService{
 > 通过实现可以覆盖controller中的全局 但是无法覆盖指定的方法
 
 ## 服务熔断
+>
