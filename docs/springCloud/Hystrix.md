@@ -105,4 +105,19 @@ public class PaymServiceImpl implements PaymService{
 > 通过实现可以覆盖controller中的全局 但是无法覆盖指定的方法
 
 ## 服务熔断
->
+> 达到最大访问最大限制 应对雪崩的一种保护机制 将对应微服务熔断 快速返回错误信息
+
+> 当检测到微服务调用正常后 恢复调用链路
+
+> 注解为@HystrixCommand 缺省值为5s内20次调用失败 会启用熔断机制
+
+### 熔断是什么
+> 当某个微服务不可用 降级->快速返回 当检测到响应正常后 恢复
+```java
+    @HystrixCommand(fallbackMethod = "paymentCircuitBreaker_fallback",commandProperties = {
+            @HystrixProperty(name = "circuitBreaker.enabled",value = "true"), // 是否开启断路器
+            @HystrixProperty(name = "circuitBreaker.requestVolumeThreshold",value = "10"), // 请求次数
+            @HystrixProperty(name = "circuitBreaker.sleepWindowInMilliseconds",value = "10000"), // 时间窗口期
+            @HystrixProperty(name = "circuitBreaker.errorThresholdPercentage",value = "60"), // 失败率
+    })
+```
