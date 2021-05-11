@@ -1,5 +1,6 @@
 > [官网地址](https://github.com/Netflix/Hystrix)
 > * cloud-provider-hystrix-payment8001
+> * cloud-consumer-hystrix-dashboard9001 (监控工具)
 > * cloud-consumer-feign-hystrix-order80
 > * eureka7001
 > * eureka7002
@@ -116,8 +117,47 @@ public class PaymServiceImpl implements PaymService{
 ```java
     @HystrixCommand(fallbackMethod = "paymentCircuitBreaker_fallback",commandProperties = {
             @HystrixProperty(name = "circuitBreaker.enabled",value = "true"), // 是否开启断路器
-            @HystrixProperty(name = "circuitBreaker.requestVolumeThreshold",value = "10"), // 请求次数
-            @HystrixProperty(name = "circuitBreaker.sleepWindowInMilliseconds",value = "10000"), // 时间窗口期
+            @HystrixProperty(name = "circuitBreaker.requestVolumeThreshold",value = "10"), // 请求次数 统计总次数
+            @HystrixProperty(name = "circuitBreaker.sleepWindowInMilliseconds",value = "10000"), // 时间窗口期 统计时间
             @HystrixProperty(name = "circuitBreaker.errorThresholdPercentage",value = "60"), // 失败率
     })
 ```
+> 熔断打开
+
+> 熔断半开
+
+> 熔断关闭
+
+## Dashboard
+> 图形化监控工具 cloud-consumer-hystrix-dashboard9001
+
+```pom
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-hystrix-dashboard</artifactId>
+        </dependency>
+```
+
+> 被监控服务需要添加配置  否则会提示无法找到
+```java
+    /**
+     * @Description: 服务监控配置
+     *
+     *
+     * @author fengyu
+     * @date 2021/5/11 13:48
+     * @return org.springframework.boot.web.servlet.ServletRegistrationBean
+     */
+    @Bean
+    public ServletRegistrationBean getServlet(){
+        HystrixMetricsStreamServlet streamServlet = new HystrixMetricsStreamServlet();
+        ServletRegistrationBean registrationBean = new ServletRegistrationBean(streamServlet);
+        registrationBean.setLoadOnStartup(1);
+        registrationBean.addUrlMappings("/hystrix.stream");
+        registrationBean.setName("HystrixMetricsStreamServlet");
+        return registrationBean;
+    }
+```
+> 监控地址: http://localhost:9001/hystrix
+
+> 被监控地址： http://localhost:8001/hystrix.stream
