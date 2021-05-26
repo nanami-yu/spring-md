@@ -56,3 +56,27 @@ eureka:
 ```
 
 ## 动态加载
+```java
+# 图形化监控
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-actuator</artifactId>
+</dependency>
+
+
+# 监控端口
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+# 业务类上方添加注解 @RefreshScope
+
+# 发送post请求 提示刷新
+curl -X POST "http://localhost:3366/actuator/refresh"
+
+# 避免客户端重启
+```
+## 遗留问题
+* 多个微服务 需要使用消息总线
