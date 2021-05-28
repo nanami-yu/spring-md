@@ -22,3 +22,4 @@
     * [配置中心Config](springCloud/Config.md)
     * [消息总线Bus](springCloud/Bus.md)
     * [消息驱动Stream](springCloud/Stream.md)
+    * [分布式请求链路跟踪](springCloud/Sleuth.md)
