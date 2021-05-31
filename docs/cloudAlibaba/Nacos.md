@@ -258,3 +258,5 @@ spring:
 > https://www.jianshu.com/p/55a4201dc78d
 >
 > http://10.4.7.131/nacos (集群访问地址)
+
+> 具体配置文件查看static/nacos
