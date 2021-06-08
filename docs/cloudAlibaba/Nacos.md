@@ -11,6 +11,7 @@
 2.访问http://localhost:8848/nacos
   默认账号密码nacos/nacos
 ```
+> 如果使用VMware安装nacos 需要设置端口转发 否则无法连接
 
 ## 注册中心
 > * cloudalibaba-provider-payment9001
